@@ -2,11 +2,10 @@
 
 A Web-Based cURL Runner & API Security Tester.
 
-![GreenAPI Screenshot](https://i.imgur.com/8Q0N6o8.png "GreenAPI User Interface")
 
 ## About The Project
 
-GreenAPI is a simple but powerful web-based utility for developers and security testers. It provides a user-friendly interface to execute `curl` commands, inspect HTTP requests and responses, and perform basic automated security scanning for common vulnerabilities like SQL Injection, XSS, and more.
+GreenAPI is a simple web-based utility for developers and security testers. It provides a user-friendly interface to execute `curl` commands, inspect HTTP requests and responses, and perform basic automated security scanning for common vulnerabilities like SQL Injection, XSS, and more.
 
 It acts as a lightweight, browser-based alternative to tools like Postman or Burp Suite's Repeater, with the added benefit of automated payload injection and professional report generation.
 

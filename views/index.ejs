@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cURL Runner & API Tester</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <div class="toolbar">
+        <h1>cURL Runner & API Tester</h1>
+    </div>
+    <div class="workspace">
+        <div class="pane pane-request">
+            <div class="input-area">
+                <textarea id="curl-input" placeholder="Paste cURL command..."></textarea>
+                <select id="test-suite-select">
+                    <option value="sqlInjection">SQL Injection</option>
+                    <option value="xss">XSS</option>
+                    <option value="commandInjection">Command Injection</option>
+                    <option value="pathTraversal">Path Traversal</option>
+                </select>
+                <button id="run-tests-btn">Run Tests</button>
+                <button id="send-btn">Send</button>
+            </div>
+            <div class="tabs" data-group="request-tabs">
+                <button class="tab-link active" data-tab="request-body">Body</button>
+                <button class="tab-link" data-tab="request-headers">Headers</button>
+            </div>
+            <div id="request-body" class="tab-content active">
+                <textarea id="request-body-editor" class="code-editor"></textarea>
+            </div>
+            <div id="request-headers" class="tab-content">
+                <div id="request-headers-editor">
+                    <div id="request-headers-list"></div>
+                    <div class="add-header-row"><button id="add-header-btn">+ Add Header</button></div>
+                </div>
+            </div>
+        </div>
+        <div class="pane pane-response">
+            <div class="status-bar" id="status-bar-container">
+                <div id="status-code" class="meta-item hidden"></div>
+                <div id="duration" class="meta-item hidden"></div>
+                <div id="size" class="meta-item hidden"></div>
+            </div>
+            <div class="tabs" data-group="response-tabs">
+                <button class="tab-link active" data-tab="response-body">Preview</button>
+                <button class="tab-link" data-tab="response-headers">Headers</button>
+                <button class="tab-link" data-tab="test-results">Test Results <span id="test-results-count"></span></button>
+            </div>
+            <div id="response-body" class="tab-content active">
+                <div class="placeholder" id="response-body-placeholder">Response will appear here.</div>
+                <pre class="hidden"><code id="response-body-content" class="language-json"></code></pre>
+            </div>
+            <div id="response-headers" class="tab-content">
+                 <pre><code id="response-headers-content" class="language-json"></code></pre>
+            </div>
+            <div id="test-results" class="tab-content">
+                <div class="test-results-header">
+                    <div class="placeholder">Automated test results will appear here.</div>
+                    <button id="export-results-btn" class="hidden">Export to Word</button>
+                </div>
+                <div id="test-results-list"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+    <!-- THE FIX IS HERE: This script loads the FileSaver.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+    <script src="/js/main.js?v=<%= cacheBuster %>"></script>
+</body>
+</html>

@@ -21,6 +21,11 @@
                     <option value="commandInjection">Command Injection</option>
                     <option value="pathTraversal">Path Traversal</option>
                 </select>
+                <!-- THE FIX IS HERE: Added a checkbox to toggle AI Analysis -->
+                <div class="ai-toggle-container">
+                    <input type="checkbox" id="enable-ai-checkbox" checked>
+                    <label for="enable-ai-checkbox">AI Analysis</label>
+                </div>
                 <button id="run-tests-btn">Run Tests</button>
                 <button id="send-btn">Send</button>
             </div>
@@ -67,7 +72,6 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
-    <!-- THE FIX IS HERE: This script loads the FileSaver.js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
     <script src="/js/main.js?v=<%= cacheBuster %>"></script>
 </body>
